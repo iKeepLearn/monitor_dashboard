@@ -54,7 +54,7 @@ const Home = (props) => {
 };
 
 export async function getStaticProps(context) {
-  const res = await fetch(`http://localhost:8889/monitorIntegrate`)
+  const res = await fetch(`http://47.242.239.96:8889/monitorIntegrate`)
   const data = await res.json()
 
   //console.log(data)
