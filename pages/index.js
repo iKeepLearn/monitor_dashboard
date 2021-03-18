@@ -9,15 +9,14 @@ import WinnerPie from '../components/winnerPie'
 import RR from '../components/RR'
 import BurnFeeArea from '../components/burnFeeArea'
 
-const Home = () => {
-  
+const Home = (props) => {
   return (<Layout>
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
       <div className="logo" />
     </Header>
     <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
       <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-        <CurrentStatusRow/>
+        <CurrentStatusRow data={props.data.currentStatus}/>
         <Row
             gutter={24}
             style={{
@@ -25,10 +24,10 @@ const Home = () => {
             }}
             >
               <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-                  <MinerTable/>
+                  <MinerTable data={props.data.minerTable}/>
               </Col>
               <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-                  <WinnerPie/>
+                  <BurnFeeArea data={props.data.burnFeeArea}/>
               </Col>
         </Row>
         <Row
@@ -38,10 +37,10 @@ const Home = () => {
             }}
             >
             <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-                <BurnFeeArea/>
+                  <WinnerPie data={props.data.winnerPie}/>
             </Col>
             <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-                  <RR/>
+                  <RR data={props.data.winnerPie}/>
             </Col>
 
         </Row>
@@ -53,4 +52,16 @@ const Home = () => {
     <Footer style={{ textAlign: 'center' }}>Daemon Technologies ©2021 Mining Monitor</Footer>
   </Layout>);
 };
+
+export async function getStaticProps(context) {
+  const res = await fetch(`http://localhost:8889/monitorIntegrate`)
+  const data = await res.json()
+
+  //console.log(data)
+
+  return {
+    props: {data}, // will be passed to the page component as props
+  }
+}
+
 export default Home;

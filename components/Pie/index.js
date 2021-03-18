@@ -1,59 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import Pie from '@ant-design/charts/lib/pie';
-const DemoPie = () => {
-  var data = [
-    {
-      type: '分类一',
-      value: 27,
-    },
-    {
-      type: '分类二',
-      value: 25,
-    },
-    {
-      type: '分类三',
-      value: 18,
-    },
-    {
-      type: '分类四',
-      value: 15,
-    },
-    {
-      type: '分类五',
-      value: 10,
-    },
-    {
-      type: '其他',
-      value: 2,
-    },
-  ];
+import { getColor } from "../../utils/index.js"
+const DemoPie = ({data}) => {
+  let datasource = data.map((value, index)=> {
+    return {...value, address:value.address.slice(0, 11).concat("....") }
+  })
+  datasource.sort((a, b)=>  b.number - a.number )
   var config = {
     appendPadding: 10,
-    data: data,
-    angleField: 'value',
-    colorField: 'type',
-    radius: 1,
-    innerRadius: 0.64,
-    meta: {
-      value: {
-        formatter: function formatter(v) {
-          return ''.concat(v, ' \xA5');
-        },
-      },
+    data: datasource,
+    angleField: 'number',
+    //colorField: 'address',
+    
+    color: function color(_ref) {
+      console.log(_ref)
+      return getColor(_ref.address);
     },
+
+    radius: 1,
+
     label: {
       type: 'inner',
       offset: '-50%',
-      style: { textAlign: 'center' },
+      style: { textAlign: 'center', fontSize: data.length>=20?"5":data.length>=10?"10":30 },
       autoRotate: false,
       content: '{value}',
     },
     interactions: [
       { type: 'element-selected' },
       { type: 'element-active' },
-      { type: 'pie-statistic-active' },
     ],
   };
   return <Pie {...config} />;
 };
+
 export default DemoPie;

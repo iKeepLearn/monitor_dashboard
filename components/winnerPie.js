@@ -1,33 +1,51 @@
 import { Card, Radio } from 'antd';
 import Pie from './Pie'
+import { useState, useEffect } from "react"
 
-const winnerPie = () => { 
+const winnerPie = ({data}) => { 
+    const [queryType, setQueryType] = useState("all")
+    const [dataSource, setDataSource] = useState(data.all)
+    const handleChangeQuery = (e) => {
+      console.log(e.target.value)
+      setQueryType(e.target.value)
+      switch (e.target.value){
+        case "all": setDataSource(data.all);
+                    break;
+        case "r1000": 
+                      setDataSource(data.r1000); 
+                      break;
+        case "r100": 
+                     setDataSource(data.r100)
+                     break;
+      }
+    }
+
     return (
         <Card 
             bordered={false}  
             style={{height: 600}}
             bodyStyle={{ padding: '20px 24px 8px 24px' }} 
             hoverable
-            title = {"区块出块分布"}
+            title = {"Winner distribution"}
             extra={
                 <div >
                   <div >
-                    <Radio.Group >
+                    <Radio.Group value={queryType} onChange={handleChangeQuery} buttonStyle="solid">
                       <Radio.Button value="all">
-                        全部
+                        All
                       </Radio.Button>
-                      <Radio.Button value="online">
-                        近1000
+                      <Radio.Button value="r1000">
+                        Recent 1000
                       </Radio.Button>
-                      <Radio.Button value="stores">
-                        近100
+                      <Radio.Button value="r100">
+                        Recent 100
                       </Radio.Button>
                     </Radio.Group>
                   </div>
                 </div>
             }
         >   
-            <Pie/>
+            <Pie data={dataSource}/>
         </Card>
     )
 }

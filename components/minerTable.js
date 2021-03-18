@@ -1,53 +1,54 @@
 import { Col, Row, Card, Table} from 'antd';
+import { Statistic } from 'antd';
 import MultiLine from './MultiLine'
 import SingleLine from './SingleLine'
 const columns = [
     {
-      title: "高度",
-      dataIndex: 'height',
-      key: 'height',
+      title: "Height",
+      dataIndex: 'stacks_block_height',
+      key: 'stacks_block_height',
+      width: 10
     },
     {
-      title: "地址",
-      dataIndex: 'btcAddress',
-      key: 'btcAddress', 
+      title: "Winner STX Address",
+      dataIndex: 'stx_address',
+      key: 'stx_address', 
+      ellipsis: true,
+      width: 53
     },
     {
-      title: "燃烧量",
-      dataIndex: 'burnFee',
-      key: 'burnFee', 
+      title: "Burn-Fee",
+      dataIndex: 'burn_fee',
+      key: 'burn_fee', 
+      width: 15
     },
 ];
-const datasource=[
-    { height:4853, btcAddress:"14jfaoidunfvljakbfvlja", burnFee:700070 },
-    { height:4852, btcAddress:"17adlfjkvnlkjnvjnfjnja", burnFee:250000 },
-    { height:4851, btcAddress:"19aihvnqowjelkap879a87", burnFee:350000 },
-    { height:4850, btcAddress:"1blapiudlkfjvn298ij29g", burnFee:470000 },
-]
-const minerTable = () => {
+
+const minerTable = ({data}) => {
     
     return (
 
         <Card 
             bordered={false}  
             bodyStyle={{ padding: '20px 24px 8px 24px' }} 
-            style={{height: 600}}
+            style={{height: 650}}
             hoverable
-            title = {"矿工信息列表"}
+            title = {"Miner Info"}
         >   
 
-            <Row>
-                <Col sm={12} xs={24} style={{ marginBottom: 24 , height:200}}>
-                    <MultiLine/>
-                </Col>
-                <Col sm={12} xs={24} style={{ marginBottom: 24 }}>
-                    <SingleLine/>
+            <Row style={{ marginBottom: 24}}>
+                <Col sm={24} xs={24} style={{ marginBottom: 24 , height:200}}>
+                    <div >
+                        <p >Burn fee curve</p>
+                    </div>
+                    <MultiLine data={data.minersBurnFee20}/>
                 </Col>
             </Row>
             <Table
                 size="small"
                 columns={columns}
-                dataSource={datasource}
+                dataSource={data.table}
+                pagination={{ pageSize: 5 }}
             />
         </Card>
 
