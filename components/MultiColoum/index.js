@@ -11,15 +11,11 @@ const DemoBar = ({data}) => {
     data: datasource,
     xField: 'RR',
     yField: 'address',
-    seriesField: 'address',
+    colorField: "address",
     color: function color(_ref) {
       return getColor(_ref.address);
     },
     legend: false,
-    meta: {
-      type: { alias: '类别' },
-      sales: { alias: '销售额' },
-    },
   };
   return <Bar {...config} />;
 };

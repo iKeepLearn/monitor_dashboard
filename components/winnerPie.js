@@ -3,6 +3,7 @@ import Pie from './Pie'
 import { useState, useEffect } from "react"
 
 const winnerPie = ({data}) => { 
+    console.log(data)
     const [queryType, setQueryType] = useState("all")
     const [dataSource, setDataSource] = useState(data.all)
     const handleChangeQuery = (e) => {

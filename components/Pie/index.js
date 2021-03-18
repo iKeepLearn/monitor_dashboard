@@ -2,23 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Pie from '@ant-design/charts/lib/pie';
 import { getColor } from "../../utils/index.js"
 const DemoPie = ({data}) => {
+  
   let datasource = data.map((value, index)=> {
     return {...value, address:value.address.slice(0, 11).concat("....") }
   })
   datasource.sort((a, b)=>  b.number - a.number )
   var config = {
-    appendPadding: 10,
     data: datasource,
+    appendPadding: 10,
     angleField: 'number',
-    //colorField: 'address',
-    
-    color: function color(_ref) {
-      console.log(_ref)
-      return getColor(_ref.address);
-    },
-
     radius: 1,
-
+    
+    color: function color({address}) {
+      return getColor(address);
+    },
+    
+    colorField: 'address',
     label: {
       type: 'inner',
       offset: '-50%',
