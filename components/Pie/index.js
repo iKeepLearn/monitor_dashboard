@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Pie from "@ant-design/charts/lib/pie";
 import { getColor } from "../../utils/index.js";
 const DemoPie = ({ data }) => {
+
   let datasource = data.map((value, index) => {
     return { ...value, address: value.address.slice(0, 11).concat("....") };
   });
   datasource.sort((a, b) => b.number - a.number);
   var config = {
     data: datasource,
-    //appendPadding: 10,
     angleField: "number",
     radius: 1,
     innerRadius: 0.64,
@@ -26,9 +26,12 @@ const DemoPie = ({ data }) => {
       autoRotate: false,
       content: "{value}",
     },
-    interactions: [{ type: "element-selected" }, { type: "element-active" }],
+    statistic: {
+      title: false,
+    },
+    interactions: [{ type: "element-selected" }, { type: "element-active" }, { type: 'pie-statistic-active' }],
   };
-  return <Pie {...config} style={{weight:'100%'}} />;
+  return <Pie {...config} style={{ weight: '100%' }} />;
 };
 
 export default DemoPie;

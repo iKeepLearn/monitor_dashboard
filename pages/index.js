@@ -9,6 +9,7 @@ import MinerTable from "../components/minerTable";
 import WinnerPie from "../components/winnerPie";
 import RR from "../components/RR";
 import BurnFeeArea from "../components/burnFeeArea";
+// import {data} from "../utils/data"
 
 
 const Home = (props) => {
