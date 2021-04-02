@@ -12,23 +12,19 @@ const DemoPie = ({data}) => {
     appendPadding: 10,
     angleField: 'number',
     radius: 1,
-    
-    color: function color({address}) {
-      return getColor(address);
-    },
-    
-    colorField: 'address',
+    innerRadius: 0.64,
+    colorField: "address",
     label: {
-      type: 'inner',
-      offset: '-50%',
-      style: { textAlign: 'center', fontSize: data.length>=20?"5":data.length>=10?"10":30 },
+      type: "inner",
+      offset: "-50%",
+      style: {
+        textAlign: "center",
+        fontSize: data.length >= 20 ? "5" : data.length >= 10 ? "10" : 30,
+      },
       autoRotate: false,
-      content: '{value}',
+      content: "{value}",
     },
-    interactions: [
-      { type: 'element-selected' },
-      { type: 'element-active' },
-    ],
+    interactions: [{ type: "element-selected" }, { type: "element-active" }],
   };
   return <Pie {...config} />;
 };

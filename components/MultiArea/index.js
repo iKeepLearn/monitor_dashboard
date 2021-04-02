@@ -9,9 +9,19 @@ const DemoArea = ({data}) => {
     xField: 'height',
     yField: 'burn_fee',
     seriesField: 'address',
+    yAxis: {
+      nice: true,
+      line: { style: { stroke: "#e1e9ef" } },
+      label:null
+    },
     slider: {
-      start: 0.1,
-      end: 0.9,
+      start: 0.4,
+      end: 1,
+      trendCfg: { isArea: true },
+      style:{
+        backgroundColor: "#fff",
+        marginTop: 20
+      }
     },
   };
   return <Area {...config} />;

@@ -8,9 +8,9 @@ const BurnFeeArea = ({data}) => {
         <Card 
             bordered={false}  
             bodyStyle={{ padding: '20px 24px 8px 24px', marginTop: '20px' }} 
-            style={{height: 650}}
+            style={{height: 600}}
             hoverable
-            title = {"Burn-fee Total Amount Curve"}
+            title = {"Burn Fee Accumulation "}
         >   
             <MultiArea data={data.data}/>
         </Card>
