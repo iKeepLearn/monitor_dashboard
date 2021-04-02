@@ -27,7 +27,11 @@ const DemoPie = ({ data }) => {
       content: "{value}",
     },
     statistic: {
-      title: false,
+      title: {
+        formatter: (datum) => {
+          return (datum ? datum.address : 'Sum')
+        }
+      },
     },
     interactions: [{ type: "element-selected" }, { type: "element-active" }, { type: 'pie-statistic-active' }],
   };
