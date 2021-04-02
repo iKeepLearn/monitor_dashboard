@@ -5,7 +5,7 @@ const CuTinyLine = ({ data }) => {
   var config = {
     height: 60,
     width: 300,
-    autoFit: false,
+    autoFit: true,
     data: data,
     smooth: true,
   };

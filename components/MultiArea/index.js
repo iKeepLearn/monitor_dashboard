@@ -12,6 +12,10 @@ const DemoArea = ({data}) => {
     slider: {
       start: 0.1,
       end: 0.9,
+      style:{
+        backgroundColor: "#fff",
+        marginTop: 20
+      }
     },
   };
   return <Area {...config} />;

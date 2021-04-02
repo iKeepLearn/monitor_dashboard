@@ -26,23 +26,23 @@ const winnerPie = ({data}) => {
             bodyStyle={{ padding: '20px 24px 8px 24px' }} 
             hoverable
             title = {"Winner distribution"}
-            extra={
-                <div >
-                  <div >
-                    <Radio.Group value={queryType} onChange={handleChangeQuery} buttonStyle="solid">
-                      <Radio.Button value="all">
-                        All
-                      </Radio.Button>
-                      <Radio.Button value="r1000">
-                        Recent 1000
-                      </Radio.Button>
-                      <Radio.Button value="r100">
-                        Recent 100
-                      </Radio.Button>
-                    </Radio.Group>
-                  </div>
-                </div>
-            }
+            // extra={
+            //     <div >
+            //       <div >
+            //         <Radio.Group value={queryType} onChange={handleChangeQuery} buttonStyle="solid">
+            //           <Radio.Button value="all">
+            //             All
+            //           </Radio.Button>
+            //           <Radio.Button value="r1000">
+            //             Recent 1000
+            //           </Radio.Button>
+            //           <Radio.Button value="r100">
+            //             Recent 100
+            //           </Radio.Button>
+            //         </Radio.Group>
+            //       </div>
+            //     </div>
+            // }
         >   
             <Pie data={dataSource}/>
         </Card>

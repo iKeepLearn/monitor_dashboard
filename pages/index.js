@@ -40,7 +40,7 @@ const Home = (props) => {
               <MinerTable data={props.data.minerTable} />
             </Col>
             <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-              <BurnFeeArea data={props.data.burnFeeArea} />
+              <WinnerPie data={props.data.winnerPie} />
             </Col>
           </Row>
           <Row
@@ -50,7 +50,7 @@ const Home = (props) => {
             }}
           >
             <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-              <WinnerPie data={props.data.winnerPie} />
+              <BurnFeeArea data={props.data.burnFeeArea} />
             </Col>
             <Col xl={12} lg={24} md={24} sm={24} xs={24}>
               <RR data={props.data.winnerPie} />

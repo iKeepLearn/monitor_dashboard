@@ -46,7 +46,16 @@
   margin-left: 0.25rem;
 }
 
+.ant-table-cell,
 .ant-statistic-title {
   font-size: 0.6rem;
   color: #6c7280;
+}
+
+.ant-card-head {
+  min-height: 20px;
+}
+
+.ant-card-head-title {
+  padding: 6px 0;
 }
