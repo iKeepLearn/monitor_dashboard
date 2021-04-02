@@ -68,11 +68,8 @@ const Home = (props) => {
 export async function getServerSideProps(context) {
   const res = await fetch(`http://47.242.239.96:8889/monitorIntegrate`);
   const data = await res.json();
-
-  //console.log(data)
-
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data },
   };
 }
 

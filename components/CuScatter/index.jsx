@@ -13,11 +13,11 @@ const CuScatter = ({ data }) => {
     shape: "circle",
     yAxis: {
       nice: true,
-      line: { style: { stroke: "#aaa" } },
+      line: { style: { stroke: "#e1e9ef" } },
     },
     xAxis: {
       grid: { line: { style: { stroke: "#eee" } } },
-      line: { style: { stroke: "#aaa" } },
+      line: { style: { stroke: "#e1e9ef" } },
     },
   };
   return <Scatter {...config} />;
