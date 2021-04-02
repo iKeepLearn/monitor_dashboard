@@ -8,7 +8,7 @@ const DemoPie = ({ data }) => {
   datasource.sort((a, b) => b.number - a.number);
   var config = {
     data: datasource,
-    appendPadding: 10,
+    //appendPadding: 10,
     angleField: "number",
     radius: 1,
     innerRadius: 0.64,
@@ -28,7 +28,7 @@ const DemoPie = ({ data }) => {
     },
     interactions: [{ type: "element-selected" }, { type: "element-active" }],
   };
-  return <Pie {...config} />;
+  return <Pie {...config} style={{weight:'100%'}} />;
 };
 
 export default DemoPie;

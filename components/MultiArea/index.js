@@ -9,6 +9,11 @@ const DemoArea = ({data}) => {
     xField: 'height',
     yField: 'burn_fee',
     seriesField: 'address',
+    yAxis: {
+      nice: true,
+      line: { style: { stroke: "#e1e9ef" } },
+      label:null
+    },
     slider: {
       start: 0.1,
       end: 0.9,

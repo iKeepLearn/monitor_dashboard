@@ -14,6 +14,7 @@ const CuScatter = ({ data }) => {
     yAxis: {
       nice: true,
       line: { style: { stroke: "#e1e9ef" } },
+      label:null
     },
     xAxis: {
       grid: { line: { style: { stroke: "#eee" } } },

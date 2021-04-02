@@ -22,6 +22,7 @@ const DemoBar = ({ data }) => {
     yAxis: {
       nice: true,
       line: { style: { stroke: "#e1e9ef" } },
+      label:null
     },
     xAxis: {
       line: { style: { stroke: "#e1e9ef" } },
