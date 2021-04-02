@@ -29,6 +29,7 @@ const renderCardContent = (props) => {
           value={titleInfo}
           valueStyle={valueStyle}
           prefix={prefix}
+          style={{padding:'0.8rem'}}
         />
       </div>
       <div style={{ height: 50 || "auto" }}>{diagram}</div>
@@ -39,6 +40,7 @@ const renderCardContent = (props) => {
             overflow: "hidden",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
+            paddingLeft:'0.8rem'
           }}
           className="flex flex-column"
         >
@@ -54,11 +56,11 @@ const renderCuCardContent = (props) => {
   const { title, titleInfo, diagram, extraLabel, extraValue } = props;
   return (
     <div>
-      <div className="flex text-grey text-sm">
+      <div className="flex text-grey text-sm" style={{padding:'0.8rem'}}>
         <div>{title}</div>
         <div className="margin-left-sm">{titleInfo}</div>
       </div>
-      <div style={{ height: 50 || "auto", marginTop: "1rem" }}>{diagram}</div>
+      <div style={{width:'100%', height: 50 || "auto", marginTop: "1rem" }}>{diagram}</div>
       <div style={{ marginTop: 5, paddingTop: 9 }}>
         <div
           style={{
@@ -66,6 +68,7 @@ const renderCuCardContent = (props) => {
             overflow: "hidden",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
+            paddingLeft:'0.8rem'
           }}
           className="flex flex-column"
         >
@@ -83,7 +86,7 @@ const currentStatusRow = ({ data }) => {
       <Col {...topColResponsiveProps}>
         <Card
           bordered={false}
-          bodyStyle={{ padding: "20px 24px 8px 24px" }}
+         // bodyStyle={{ padding: "20px 24px 8px 24px" }}
           hoverable
         >
           {renderCardContent({
@@ -100,7 +103,7 @@ const currentStatusRow = ({ data }) => {
       <Col {...topColResponsiveProps}>
         <Card
           bordered={false}
-          bodyStyle={{ padding: "20px 24px 8px 24px" }}
+        //  bodyStyle={{ padding: "20px 24px 8px 24px" }}
           hoverable
           style={{ height: "100%" }}
         >
@@ -116,7 +119,7 @@ const currentStatusRow = ({ data }) => {
       <Col {...topColResponsiveProps}>
         <Card
           bordered={false}
-          bodyStyle={{ padding: "20px 24px 8px 24px" }}
+        //  bodyStyle={{ padding: "20px 24px 8px 24px" }}
           hoverable
           style={{ height: "100%" }}
         >
