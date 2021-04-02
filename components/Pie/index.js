@@ -4,7 +4,7 @@ import { getColor } from "../../utils/index.js"
 const DemoPie = ({data}) => {
   
   let datasource = data.map((value, index)=> {
-    return {...value, address:value.address.slice(0, 11).concat("....") }
+    return {...value}
   })
   datasource.sort((a, b)=>  b.number - a.number )
   var config = {
@@ -19,10 +19,13 @@ const DemoPie = ({data}) => {
       offset: "-50%",
       style: {
         textAlign: "center",
-        fontSize: data.length >= 20 ? "5" : data.length >= 10 ? "10" : 30,
+        fontSize: data.length >= 20 ? "10" : data.length >= 10 ? "15" : "20",
       },
       autoRotate: false,
       content: "{value}",
+    },
+    statistic: {
+      title: false,
     },
     interactions: [{ type: "element-selected" }, { type: "element-active" }],
   };
