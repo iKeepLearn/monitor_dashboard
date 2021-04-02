@@ -29,7 +29,7 @@ const renderCardContent = (props) => {
           value={titleInfo}
           valueStyle={valueStyle}
           prefix={prefix}
-          style={{padding:'0.8rem'}}
+          style={{padding:'1rem'}}
         />
       </div>
       <div style={{ height: 50 || "auto" }}>{diagram}</div>
@@ -40,7 +40,7 @@ const renderCardContent = (props) => {
             overflow: "hidden",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
-            paddingLeft:'0.8rem'
+            paddingLeft:'1rem'
           }}
           className="flex flex-column"
         >
@@ -56,7 +56,7 @@ const renderCuCardContent = (props) => {
   const { title, titleInfo, diagram, extraLabel, extraValue } = props;
   return (
     <div>
-      <div className="flex text-grey text-sm" style={{padding:'0.8rem'}}>
+      <div className="flex text-grey text-sm" style={{padding:'1rem'}}>
         <div>{title}</div>
         <div className="margin-left-sm">{titleInfo}</div>
       </div>
@@ -68,7 +68,7 @@ const renderCuCardContent = (props) => {
             overflow: "hidden",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
-            paddingLeft:'0.8rem'
+            paddingLeft:'1rem'
           }}
           className="flex flex-column"
         >

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Scatter from "@ant-design/charts/lib/scatter";
 
 const CuScatter = ({ data }) => {
   var config = {
     appendPadding: 30,
-    data: data,
+    data,
     xField: "height",
     yField: "fee",
     colorField: "address",
@@ -14,7 +14,7 @@ const CuScatter = ({ data }) => {
     yAxis: {
       nice: true,
       line: { style: { stroke: "#e1e9ef" } },
-      label:null
+      label: null
     },
     xAxis: {
       grid: { line: { style: { stroke: "#eee" } } },

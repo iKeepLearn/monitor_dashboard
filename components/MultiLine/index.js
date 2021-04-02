@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Line from '@ant-design/charts/lib/line';
 
-const DemoLine = ({data}) => {
+const DemoLine = ({ data }) => {
   var config = {
-    data: data,
+    data,
     xField: 'height',
     yField: 'fee',
     seriesField: 'address',

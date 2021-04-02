@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Bar from "@ant-design/charts/lib/bar";
 import { getColor } from "../../utils/index.js";
 
@@ -22,7 +22,7 @@ const DemoBar = ({ data }) => {
     yAxis: {
       nice: true,
       line: { style: { stroke: "#e1e9ef" } },
-      label:null
+      label: null
     },
     xAxis: {
       line: { style: { stroke: "#e1e9ef" } },
