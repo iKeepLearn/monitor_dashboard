@@ -30,7 +30,7 @@ const minerTable = ({ data }) => {
     <Card
       bordered={false}
       bodyStyle={{ padding: "20px 24px 8px 24px" }}
-      style={{ height: 650 }}
+      style={{ height: 600 }}
       hoverable
       title={"Burn Fee Plot"}
     >

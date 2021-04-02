@@ -25,23 +25,23 @@ const RR = ({data}) => {
             style={{height: 600}}
             hoverable
             title = {"Rate of Return"}
-            // extra={
-            //     <div >
-            //       <div >
-            //         <Radio.Group value={queryType} onChange={handleChangeQuery} buttonStyle="solid">
-            //           <Radio.Button value="all">
-            //             All
-            //           </Radio.Button>
-            //           <Radio.Button value="r1000">
-            //             Recent 1000
-            //           </Radio.Button>
-            //           <Radio.Button value="r100">
-            //             Recent 100
-            //           </Radio.Button>
-            //         </Radio.Group>
-            //       </div>
-            //     </div>
-            // }
+            extra={
+                <div >
+                  <div >
+                    <Radio.Group value={queryType} onChange={handleChangeQuery} buttonStyle="solid">
+                      <Radio.Button value="all">
+                        All
+                      </Radio.Button>
+                      <Radio.Button value="r1000">
+                        Recent 1000
+                      </Radio.Button>
+                      <Radio.Button value="r100">
+                        Recent 100
+                      </Radio.Button>
+                    </Radio.Group>
+                  </div>
+                </div>
+            }
         >   
             <MultiColoum data={dataSource}/>
         </Card>
