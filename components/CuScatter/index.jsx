@@ -8,7 +8,6 @@ const CuScatter = ({ data }) => {
     xField: "height",
     yField: "fee",
     colorField: "address",
-    color: "#d1d5db",
     size: 5,
     shape: "circle",
     yAxis: {

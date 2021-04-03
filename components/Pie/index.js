@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Pie from "@ant-design/charts/lib/pie";
-import { getColor } from "../../utils/index.js";
 const DemoPie = ({ data }) => {
 
   let datasource = data.map((value, index) => {
@@ -12,9 +11,6 @@ const DemoPie = ({ data }) => {
     angleField: "number",
     radius: 1,
     innerRadius: 0.64,
-    color: function color({ address }) {
-      return getColor(address);
-    },
     colorField: "address",
     label: {
       type: "inner",

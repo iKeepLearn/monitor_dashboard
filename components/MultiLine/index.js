@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 import React from 'react';
 import Line from '@ant-design/charts/lib/line';
 
 const DemoLine = ({ data }) => {
   var config = {
     data,
-=======
-import React, { useState, useEffect } from 'react';
-import Line from '@ant-design/charts/lib/line';
-
-const DemoLine = ({data}) => {
-  var config = {
-    data: data,
->>>>>>> devp
     xField: 'height',
     yField: 'fee',
     seriesField: 'address',
