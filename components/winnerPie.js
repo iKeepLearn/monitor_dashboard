@@ -25,18 +25,18 @@ const winnerPie = ({data}) => {
             style={{height: 600}}
             bodyStyle={{ padding: '20px 24px 8px 24px' }} 
             hoverable
-            title = {"Winner distribution"}
+            title = {"Winner Distribution"}
             extra={
                 <div >
                   <div >
                     <Radio.Group value={queryType} onChange={handleChangeQuery} buttonStyle="solid">
-                      <Radio.Button value="all">
+                      <Radio.Button value="all" className="radio-button">
                         All
                       </Radio.Button>
-                      <Radio.Button value="r1000">
+                      <Radio.Button value="r1000" className="radio-button">
                         Recent 1000
                       </Radio.Button>
-                      <Radio.Button value="r100">
+                      <Radio.Button value="r100" className="radio-button">
                         Recent 100
                       </Radio.Button>
                     </Radio.Group>

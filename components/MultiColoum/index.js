@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+import React, { useState, useEffect } from "react";
+>>>>>>> devp
 import Bar from "@ant-design/charts/lib/bar";
 import { getColor } from "../../utils/index.js";
 

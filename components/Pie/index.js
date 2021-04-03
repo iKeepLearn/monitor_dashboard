@@ -21,7 +21,7 @@ const DemoPie = ({ data }) => {
       offset: "-50%",
       style: {
         textAlign: "center",
-        fontSize: data.length >= 20 ? "5" : data.length >= 10 ? "10" : 30,
+        fontSize: data.length >= 20 ? "10" : data.length >= 10 ? "15" : "20",
       },
       autoRotate: false,
       content: "{value}",

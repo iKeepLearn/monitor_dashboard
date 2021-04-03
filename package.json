@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@ant-design/charts": "^1.0.18",
-    "@ant-design/icons": "^4.6.2",
     "antd": "^4.12.3",
     "next": "10.0.7",
     "react": "17.0.1",

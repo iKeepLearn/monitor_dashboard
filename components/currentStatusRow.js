@@ -2,6 +2,7 @@ import { Col, Row, Card } from "antd";
 import { Statistic } from "antd";
 import MiniArea from "./MiniArea";
 import CuTinyLine from "./CuTinyLine";
+import {thousands} from '../utils/index.js'
 
 const topColResponsiveProps = {
   xs: 24,
@@ -45,7 +46,7 @@ const renderCardContent = (props) => {
           className="flex flex-column"
         >
           <span className="text-sm text-grey">{extraLabel}</span>
-          <span className="text-bold text-black text-lg">{extraValue}</span>
+          <span className="text-bold text-black text-lg">{thousands(extraValue)}</span>
         </div>
       </div>
     </div>
@@ -73,7 +74,7 @@ const renderCuCardContent = (props) => {
           className="flex flex-column"
         >
           <span className="text-sm text-grey">{extraLabel}</span>
-          <span className="text-bold text-black text-lg">{extraValue}</span>
+          <span className="text-bold text-black text-lg">{thousands(extraValue)}</span>
         </div>
       </div>
     </div>
@@ -95,7 +96,7 @@ const currentStatusRow = ({ data }) => {
             prefix: "#",
 
             diagram: <div></div>,
-            extraLabel: "Current Height",
+            extraLabel: "Current Stacks Height",
             extraValue: data.current_block.stacks_block_height,
           })}
         </Card>
