@@ -1,4 +1,8 @@
 export const data = {
+  price: {
+    stxprice: 1.723452,
+    btcprice: 57650.59
+  },
   currentStatus: {
     current_block: {
       stacks_block_height: "9556",

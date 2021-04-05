@@ -9,7 +9,8 @@ import MinerTable from "../components/minerTable";
 import WinnerPie from "../components/winnerPie";
 import RR from "../components/RR";
 import BurnFeeArea from "../components/burnFeeArea";
-// import {data} from "../utils/data"
+import PriceTag from "../components/PriceTag";
+import { data } from "../utils/data"
 
 
 const Home = (props) => {
@@ -18,15 +19,17 @@ const Home = (props) => {
       <Head>
         <title>STX Mining Monitor</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png" />
       </Head>
       <Layout>
         <Header
           style={{ position: "fixed", zIndex: 91, width: "100%", height: "5rem" }}
         >
-          <div className="logo">
+          <div className="logo flex justify-between align-center" style={{ width: '100%' }}>
             <img src="/images/logo.png" className="logo_image"></img>
+            <PriceTag price={props.data.price} />
           </div>
+
         </Header>
         <div className="header-bg"></div>
         <Content
@@ -75,8 +78,9 @@ const Home = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`http://47.242.239.96:8889/monitorIntegrate`);
-  const data = await res.json();
+  // const res = await fetch(`http://47.242.239.96:8889/monitorIntegrate`);
+  // const data = await res.json();
+  
   return {
     props: { data },
   };
