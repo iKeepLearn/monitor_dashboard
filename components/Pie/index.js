@@ -1,11 +1,12 @@
 import React from "react";
 import Pie from "@ant-design/charts/lib/pie";
 const DemoPie = ({ data }) => {
-
   let datasource = data.map((value, index) => {
     return { ...value, address: value.address.slice(0, 11).concat("....") };
   });
+
   datasource.sort((a, b) => b.number - a.number);
+
   var config = {
     data: datasource,
     angleField: "number",
@@ -25,13 +26,17 @@ const DemoPie = ({ data }) => {
     statistic: {
       title: {
         formatter: (datum) => {
-          return (datum ? datum.address : 'Sum')
-        }
+          return datum ? datum.address : "Sum";
+        },
       },
     },
-    interactions: [{ type: "element-selected" }, { type: "element-active" }, { type: 'pie-statistic-active' }],
+    interactions: [
+      { type: "element-selected" },
+      { type: "element-active" },
+      { type: "pie-statistic-active" },
+    ],
   };
-  return <Pie {...config} style={{ weight: '100%' }} />;
+  return <Pie {...config} style={{ weight: "100%" }} />;
 };
 
 export default DemoPie;

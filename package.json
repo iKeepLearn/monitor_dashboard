@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "@ant-design/charts": "^1.0.18",
+    "animated-number-react": "^0.1.2",
     "antd": "^4.12.3",
+    "axios": "^0.21.1",
     "next": "10.0.7",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "swr": "^0.5.5"
   }
 }
